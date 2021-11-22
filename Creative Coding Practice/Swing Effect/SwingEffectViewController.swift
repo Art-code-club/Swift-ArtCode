@@ -58,6 +58,12 @@ class SwingEffectViewController: UIViewController {
         self.view.layer.addSublayer(line)
     }
     
+    private func getTwoPointDistance(_ point1:CGPoint,_ point2:CGPoint) -> CGFloat {
+        let xDist:CGFloat = point2.x - point1.x
+        let yDist:CGFloat = point2.y - point1.y
+        return sqrt((xDist * xDist) + (yDist * yDist))
+    }
+    
     //MARK:- IBActions
     
     @IBAction func dragSquare(_ sender: UIPanGestureRecognizer) {
@@ -79,6 +85,9 @@ class SwingEffectViewController: UIViewController {
             let point:CGPoint = sender.location(in: view)
             redDot2.center = point
             addLine(start: redDot1.center, toPoint:redDot2.center)
+            let distance:CGFloat = getTwoPointDistance(redDot1.center, redDot2.center)
+            
+         
         }else if sender.state == .ended {
             self.changeRedDotColor(.clear)
             self.line.strokeColor = UIColor.clear.cgColor
