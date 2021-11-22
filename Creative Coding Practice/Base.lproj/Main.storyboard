@@ -18,11 +18,15 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Brc-Ee-a68">
                                 <rect key="frame" x="177" y="423" width="60" height="60"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="i68-uM-8w7"/>
                                     <constraint firstAttribute="height" constant="60" id="wkA-l5-DdO"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mh2-g4-VRg" appends="YES" id="8hi-wc-d73"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -32,8 +36,16 @@
                             <constraint firstItem="Brc-Ee-a68" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eeB-WZ-kY2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="square" destination="Brc-Ee-a68" id="hrf-Iz-Ey9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="mh2-g4-VRg">
+                    <connections>
+                        <action selector="dragSquare:" destination="BYZ-38-t0r" id="Mvc-k5-0HR"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="139" y="129"/>
         </scene>
@@ -41,6 +53,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
