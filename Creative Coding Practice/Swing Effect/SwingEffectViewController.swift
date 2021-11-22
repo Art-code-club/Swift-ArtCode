@@ -8,18 +8,32 @@
 import UIKit
 
 class SwingEffectViewController: UIViewController {
-
-    //MARK:- IBOutlets
-    
-    @IBOutlet weak var redDot2: UIView!
-    @IBOutlet weak var redDot1: UIView!
-    @IBOutlet weak var square: UIView!
     
     //MARK:- Properties
+    
+    let square:UIView = {
+        let view:UIView = UIView()
+        view.backgroundColor = .systemYellow
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let redDot1:UIView = {
+        let view:UIView = UIView()
+        view.backgroundColor = .red
+        return view
+    }()
+    
+    let redDot2:UIView = {
+        let view:UIView = UIView()
+        view.backgroundColor = .red
+        return view
+    }()
     
     private var gapX:Double = 0
     private var gapY:Double = 0
     private var line = CAShapeLayer()
+    private var startPoint = CGPoint()
     
     
     
@@ -32,18 +46,25 @@ class SwingEffectViewController: UIViewController {
     
     //MARK:- Help Functions
     
+    func setLayout() {
+        square.frame = CGRect(x: self.view.center.x, y: self.view.center.y, width: 60, height: 60)
+        redDot1.frame = CGRect(x: self.view.center.x, y: self.view.center.y, width: 10, height: 10)
+        redDot2.frame = CGRect(x: self.view.center.x, y: self.view.center.y, width: 10, height: 10)
+        self.view.addSubview(square)
+        self.view.addSubview(redDot1)
+        self.view.addSubview(redDot2)
+    }
+    
     private func configure() {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.dragSquare(_:)))
+        square.addGestureRecognizer(panGesture)
         changeRedDotColor(.clear)
+        setLayout()
     }
     
     private func changeRedDotColor(_ color:UIColor) {
         redDot1.backgroundColor = color
         redDot2.backgroundColor = color
-    }
-    
-    private func changeRedDotLocation(_ point:CGPoint) {
-        redDot1.center = point
-        redDot2.center = point
     }
     
     private func addLine(start: CGPoint, toPoint end:CGPoint) {
@@ -54,43 +75,64 @@ class SwingEffectViewController: UIViewController {
         line.path = linePath.cgPath
         line.strokeColor = UIColor.red.cgColor
         line.lineWidth = 2
-        line.lineJoin = CAShapeLayerLineJoin.round
-        self.view.layer.addSublayer(line)
+        view.layer.addSublayer(line)
     }
     
     private func getTwoPointDistance(_ point1:CGPoint,_ point2:CGPoint) -> CGFloat {
-        let xDist:CGFloat = point2.x - point1.x
-        let yDist:CGFloat = point2.y - point1.y
-        return sqrt((xDist * xDist) + (yDist * yDist))
+           let xDist:CGFloat = point2.x - point1.x
+           let yDist:CGFloat = point2.y - point1.y
+           return sqrt((xDist * xDist) + (yDist * yDist))
+       }
+    
+    private func getTwoPointAngle(center:CGPoint,p1: CGPoint, p2: CGPoint) -> CGFloat {
+        let v1 = CGVector(dx: p1.x - center.x, dy: p1.y - center.y)
+        let v2 = CGVector(dx: p2.x - center.x, dy: p2.y - center.y)
+        let angle = atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx)
+        let deg = angle * CGFloat(180.0/Double.pi)
+        return deg < 0 ? deg + 360 : deg
     }
     
-    //MARK:- IBActions
     
-    @IBAction func dragSquare(_ sender: UIPanGestureRecognizer) {
-        let translation = sender.translation(in:square)
-
-        self.square.center = CGPoint(x: self.square.center.x + translation.x, y: self.square.center.y + translation.y)
-        sender.setTranslation(.zero, in:self.square)
-        
+    //MARK:- Actions
+    
+    @objc func dragSquare(_ sender: UIPanGestureRecognizer) {
         if sender.state == .began {
             let location = sender.location(in: view)
             gapX = square.center.x - location.x
             gapY = square.center.y - location.y
-            
             let point:CGPoint = CGPoint(x: square.center.x - gapX, y: square.center.y - gapY)
             changeRedDotColor(.red)
-            changeRedDotLocation(point)
-            
+            redDot1.center = point
         }else if sender.state == .changed {
-            let point:CGPoint = sender.location(in: view)
-            redDot2.center = point
-            addLine(start: redDot1.center, toPoint:redDot2.center)
-            let distance:CGFloat = getTwoPointDistance(redDot1.center, redDot2.center)
-            
-         
+            redDot2.center = sender.location(in: view)
+            self.addLine(start: redDot1.center, toPoint:redDot2.center)
+            let newX = redDot2.center.x - redDot1.center.x
+            let newY = redDot2.center.y - redDot1.center.y
+            let newRedDot1:CGPoint = CGPoint(x: redDot1.center.x + newX, y: redDot1.center.y + newY)
+            let distance:CGFloat = getTwoPointDistance(redDot1.center,redDot2.center)
+            if distance > 100 {
+                UIView.animate(withDuration: 1) {
+                    let angle = self.getTwoPointAngle(center:self.square.center,p1: self.redDot1.center, p2: self.redDot2.center)
+                    self.square.rotate(degrees:angle)
+                    self.redDot1.center = newRedDot1
+                    self.square.center = CGPoint(x: self.redDot1.center.x + self.gapX , y:self.redDot1.center.y + self.gapY)
+                }
+            }
         }else if sender.state == .ended {
-            self.changeRedDotColor(.clear)
-            self.line.strokeColor = UIColor.clear.cgColor
+            UIView.animate(withDuration: 0.5) {
+                self.square.rotate(degrees:0)
+                self.changeRedDotColor(.clear)
+                self.line.strokeColor = UIColor.clear.cgColor
+            }
         }
+    }
+}
+
+extension UIView {
+    func rotate(degrees: CGFloat) {
+        let degreesToRadians: (CGFloat) -> CGFloat = { (degrees: CGFloat) in
+            return degrees / 180.0 * CGFloat.pi
+        }
+        self.transform =  CGAffineTransform(rotationAngle: degreesToRadians(degrees))
     }
 }
