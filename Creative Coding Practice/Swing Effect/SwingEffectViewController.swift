@@ -19,6 +19,7 @@ class SwingEffectViewController: UIViewController {
     
     private var gapX:Double = 0
     private var gapY:Double = 0
+    private var line = CAShapeLayer()
     
     
     
@@ -45,29 +46,42 @@ class SwingEffectViewController: UIViewController {
         redDot2.center = point
     }
     
+    private func addLine(start: CGPoint, toPoint end:CGPoint) {
+        line.removeFromSuperlayer()
+        let linePath = UIBezierPath()
+        linePath.move(to: start)
+        linePath.addLine(to: end)
+        line.path = linePath.cgPath
+        line.strokeColor = UIColor.red.cgColor
+        line.lineWidth = 2
+        line.lineJoin = CAShapeLayerLineJoin.round
+        self.view.layer.addSublayer(line)
+    }
+    
     //MARK:- IBActions
     
     @IBAction func dragSquare(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in:square)
-        square.center = CGPoint(x: square.center.x + translation.x, y: square.center.y + translation.y)
-        sender.setTranslation(.zero, in:square)
 
+        self.square.center = CGPoint(x: self.square.center.x + translation.x, y: self.square.center.y + translation.y)
+        sender.setTranslation(.zero, in:self.square)
         
         if sender.state == .began {
             let location = sender.location(in: view)
-            let x = location.x
-            let y = location.y
+            gapX = square.center.x - location.x
+            gapY = square.center.y - location.y
             
-            gapX = square.center.x - x
-            gapY = square.center.y - y
-
-            changeRedDotColor(.red)
-       
-        }else if sender.state == .changed {
             let point:CGPoint = CGPoint(x: square.center.x - gapX, y: square.center.y - gapY)
+            changeRedDotColor(.red)
             changeRedDotLocation(point)
+            
+        }else if sender.state == .changed {
+            let point:CGPoint = sender.location(in: view)
+            redDot2.center = point
+            addLine(start: redDot1.center, toPoint:redDot2.center)
         }else if sender.state == .ended {
-            changeRedDotColor(.clear)
+            self.changeRedDotColor(.clear)
+            self.line.strokeColor = UIColor.clear.cgColor
         }
     }
 }
