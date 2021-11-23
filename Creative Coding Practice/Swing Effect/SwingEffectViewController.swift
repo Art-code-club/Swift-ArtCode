@@ -14,7 +14,6 @@ class SwingEffectViewController: UIViewController {
     let square:UIView = {
         let view:UIView = UIView()
         view.backgroundColor = .systemYellow
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -34,7 +33,10 @@ class SwingEffectViewController: UIViewController {
     private var gapY:Double = 0
     private var line = CAShapeLayer()
     private var startPoint = CGPoint()
-    
+    private var angle = CGFloat()
+    var displayLink:CADisplayLink?
+    var x:CGFloat = 0
+    var y:CGFloat = 0
     
     
     //MARK:- Life Cycle
@@ -42,6 +44,30 @@ class SwingEffectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+    }
+    
+    func createDisplayLink() {
+        let displaylink = CADisplayLink(target: self,
+                                        selector: #selector(step))
+        displaylink.add(to: .current,
+                        forMode:.common)
+        displayLink = displaylink
+    }
+         
+    @objc func step(displaylink: CADisplayLink) {
+        
+        if floor(redDot1.center.x) == floor(x) && floor(redDot1.center.y) == floor(y){
+            displaylink.invalidate()
+            return
+        }
+        if floor(redDot1.center.x) != floor(x) {
+            redDot1.center.x += redDot1.center.x < x ? 1 : -1
+        }
+        
+        if floor(redDot1.center.y) != floor(y) {
+            redDot1.center.y += redDot1.center.y < y ? 1 : -1
+        }
+        addLine(start: redDot1.center, toPoint: redDot2.center)
     }
     
     //MARK:- Help Functions
@@ -110,17 +136,33 @@ class SwingEffectViewController: UIViewController {
             let newY = redDot2.center.y - redDot1.center.y
             let newRedDot1:CGPoint = CGPoint(x: redDot1.center.x + newX, y: redDot1.center.y + newY)
             let distance:CGFloat = getTwoPointDistance(redDot1.center,redDot2.center)
-            if distance > 100 {
-                UIView.animate(withDuration: 1) {
-                    let angle = self.getTwoPointAngle(center:self.square.center,p1: self.redDot1.center, p2: self.redDot2.center)
-                    self.square.rotate(degrees:angle)
-                    self.redDot1.center = newRedDot1
-                    self.square.center = CGPoint(x: self.redDot1.center.x + self.gapX , y:self.redDot1.center.y + self.gapY)
+            
+            if distance > 150 {
+                UIView.animate(withDuration: 0.4) {
+                    self.createDisplayLink()
+                    self.x = newRedDot1.x + self.gapX
+                    self.y = newRedDot1.y + self.gapY
+                    self.angle = self.getTwoPointAngle(center:self.view.center,p1: self.redDot1.center, p2: self.redDot2.center)
+                    self.square.rotate(degrees:self.angle)
+                    self.square.center = CGPoint(x:self.x + self.gapX, y:self.y + self.gapY)
+                } completion: { _ in
+                    self.line.strokeColor = UIColor.clear.cgColor
                 }
             }
+            
         }else if sender.state == .ended {
-            UIView.animate(withDuration: 0.5) {
-                self.square.rotate(degrees:0)
+            UIView.animate(withDuration: 0.4) {
+                var newAngle:CGFloat = 0
+                if 0...90 ~= self.angle {
+                    newAngle = 0
+                }else if 91...180 ~= self.angle {
+                    newAngle = 90
+                }else if 181...270 ~= self.angle {
+                    newAngle = 180
+                }else {
+                    newAngle = 270
+                }
+                self.square.rotate(degrees:newAngle)
                 self.changeRedDotColor(.clear)
                 self.line.strokeColor = UIColor.clear.cgColor
             }
