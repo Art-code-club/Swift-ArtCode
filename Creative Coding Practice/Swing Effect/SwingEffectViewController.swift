@@ -35,8 +35,8 @@ class SwingEffectViewController: UIViewController {
     private var startPoint = CGPoint()
     private var angle = CGFloat()
     var displayLink:CADisplayLink?
-    var x:CGFloat = 0
-    var y:CGFloat = 0
+    var goal = CGPoint()
+    
     
     
     //MARK:- Life Cycle
@@ -56,16 +56,16 @@ class SwingEffectViewController: UIViewController {
          
     @objc func step(displaylink: CADisplayLink) {
         
-        if floor(redDot1.center.x) == floor(x) && floor(redDot1.center.y) == floor(y){
+        if floor(redDot1.center.x) == floor(goal.x) && floor(redDot1.center.y) == floor(goal.y){
             displaylink.invalidate()
             return
         }
-        if floor(redDot1.center.x) != floor(x) {
-            redDot1.center.x += redDot1.center.x < x ? 1 : -1
+        if floor(redDot1.center.x) != floor(goal.x) {
+            redDot1.center.x += redDot1.center.x < goal.x ? 1 : -1
         }
         
-        if floor(redDot1.center.y) != floor(y) {
-            redDot1.center.y += redDot1.center.y < y ? 1 : -1
+        if floor(redDot1.center.y) != floor(goal.y) {
+            redDot1.center.y += redDot1.center.y < goal.y ? 1 : -1
         }
         addLine(start: redDot1.center, toPoint: redDot2.center)
     }
@@ -118,6 +118,45 @@ class SwingEffectViewController: UIViewController {
         return deg < 0 ? deg + 360 : deg
     }
     
+    private func getNewPoint(p2:CGPoint) -> CGPoint {
+        if p2.x <= square.center.x  {
+            //1
+            if p2.y <= square.center.y {
+                return CGPoint(x: p2.x+50, y: p2.y+50)
+            //3
+            }else {
+                return CGPoint(x: p2.x+50, y: p2.y-50)
+            }
+        }else {
+            //2
+            if p2.y <= square.center.y {
+                return CGPoint(x: p2.x-50, y: p2.y+50)
+            //4
+            }else {
+                return CGPoint(x: p2.x-50, y: p2.y-50)
+            }
+        }
+    }
+    
+    private func getAngle(p2:CGPoint) -> CGFloat {
+        if p2.x <= square.center.x  {
+            //1
+            if p2.y <= square.center.y {
+                return 45
+            //3
+            }else {
+                return -45
+            }
+        }else {
+            //2
+            if p2.y <= square.center.y {
+                return -45
+            //4
+            }else {
+                return 45
+            }
+        }
+    }
     
     //MARK:- Actions
     
@@ -132,37 +171,21 @@ class SwingEffectViewController: UIViewController {
         }else if sender.state == .changed {
             redDot2.center = sender.location(in: view)
             self.addLine(start: redDot1.center, toPoint:redDot2.center)
-            let newX = redDot2.center.x - redDot1.center.x
-            let newY = redDot2.center.y - redDot1.center.y
-            let newRedDot1:CGPoint = CGPoint(x: redDot1.center.x + newX, y: redDot1.center.y + newY)
             let distance:CGFloat = getTwoPointDistance(redDot1.center,redDot2.center)
             
             if distance > 150 {
-                UIView.animate(withDuration: 0.4) {
+                UIView.animate(withDuration: 0.5) {
                     self.createDisplayLink()
-                    self.x = newRedDot1.x + self.gapX
-                    self.y = newRedDot1.y + self.gapY
-                    self.angle = self.getTwoPointAngle(center:self.view.center,p1: self.redDot1.center, p2: self.redDot2.center)
-                    self.square.rotate(degrees:self.angle)
-                    self.square.center = CGPoint(x:self.x + self.gapX, y:self.y + self.gapY)
+                    self.goal = self.getNewPoint(p2: self.redDot2.center)
+                    self.square.rotate(degrees:self.getAngle(p2: self.redDot2.center))
+                    self.square.center = CGPoint(x:self.goal.x + self.gapX, y:self.goal.y + self.gapY)
                 } completion: { _ in
                     self.line.strokeColor = UIColor.clear.cgColor
                 }
             }
-            
         }else if sender.state == .ended {
             UIView.animate(withDuration: 0.4) {
-                var newAngle:CGFloat = 0
-                if 0...90 ~= self.angle {
-                    newAngle = 0
-                }else if 91...180 ~= self.angle {
-                    newAngle = 90
-                }else if 181...270 ~= self.angle {
-                    newAngle = 180
-                }else {
-                    newAngle = 270
-                }
-                self.square.rotate(degrees:newAngle)
+                self.square.rotate(degrees:0)
                 self.changeRedDotColor(.clear)
                 self.line.strokeColor = UIColor.clear.cgColor
             }
