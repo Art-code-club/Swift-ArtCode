@@ -13,7 +13,7 @@ class SwingEffectViewController: UIViewController {
     
     let square:UIView = {
         let view:UIView = UIView()
-        view.backgroundColor = .systemYellow
+        view.backgroundColor = .systemCyan
         return view
     }()
     
@@ -29,15 +29,20 @@ class SwingEffectViewController: UIViewController {
         return view
     }()
     
-    private var gapX:Double = 0
-    private var gapY:Double = 0
+    let label:UILabel = {
+        let label:UILabel = UILabel()
+        label.text = "Fomagran"
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.textColor = .white
+        return label
+    }()
+    
+    private var gap:CGPoint = CGPoint()
     private var line = CAShapeLayer()
     private var startPoint = CGPoint()
     private var angle = CGFloat()
     var displayLink:CADisplayLink?
     var goal = CGPoint()
-    
-    
     
     //MARK:- Life Cycle
     
@@ -46,39 +51,19 @@ class SwingEffectViewController: UIViewController {
         configure()
     }
     
-    func createDisplayLink() {
-        let displaylink = CADisplayLink(target: self,
-                                        selector: #selector(step))
-        displaylink.add(to: .current,
-                        forMode:.common)
-        displayLink = displaylink
-    }
-         
-    @objc func step(displaylink: CADisplayLink) {
-        
-        if floor(redDot1.center.x) == floor(goal.x) && floor(redDot1.center.y) == floor(goal.y){
-            displaylink.invalidate()
-            return
-        }
-        if floor(redDot1.center.x) != floor(goal.x) {
-            redDot1.center.x += redDot1.center.x < goal.x ? 1 : -1
-        }
-        
-        if floor(redDot1.center.y) != floor(goal.y) {
-            redDot1.center.y += redDot1.center.y < goal.y ? 1 : -1
-        }
-        addLine(start: redDot1.center, toPoint: redDot2.center)
-    }
-    
     //MARK:- Help Functions
     
     func setLayout() {
-        square.frame = CGRect(x: self.view.center.x, y: self.view.center.y, width: 60, height: 60)
+        square.frame = CGRect(x: self.view.center.x, y: self.view.center.y, width: 200, height: 100)
         redDot1.frame = CGRect(x: self.view.center.x, y: self.view.center.y, width: 10, height: 10)
         redDot2.frame = CGRect(x: self.view.center.x, y: self.view.center.y, width: 10, height: 10)
+        redDot1.layer.cornerRadius = 5
+        redDot2.layer.cornerRadius = 5
         self.view.addSubview(square)
+        label.frame = CGRect(x: self.square.center.x, y: self.square.center.y, width: 120, height: 50)
         self.view.addSubview(redDot1)
         self.view.addSubview(redDot2)
+        self.view.addSubview(label)
     }
     
     private func configure() {
@@ -86,6 +71,12 @@ class SwingEffectViewController: UIViewController {
         square.addGestureRecognizer(panGesture)
         changeRedDotColor(.clear)
         setLayout()
+    }
+    
+    func createDisplayLink() {
+        let displaylink = CADisplayLink(target: self,selector: #selector(checkRedDot1))
+        displaylink.add(to: .current,forMode:.common)
+        displayLink = displaylink
     }
     
     private func changeRedDotColor(_ color:UIColor) {
@@ -110,51 +101,12 @@ class SwingEffectViewController: UIViewController {
            return sqrt((xDist * xDist) + (yDist * yDist))
        }
     
-    private func getTwoPointAngle(center:CGPoint,p1: CGPoint, p2: CGPoint) -> CGFloat {
-        let v1 = CGVector(dx: p1.x - center.x, dy: p1.y - center.y)
-        let v2 = CGVector(dx: p2.x - center.x, dy: p2.y - center.y)
-        let angle = atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx)
-        let deg = angle * CGFloat(180.0/Double.pi)
-        return deg < 0 ? deg + 360 : deg
-    }
-    
-    private func getNewPoint(p2:CGPoint) -> CGPoint {
-        if p2.x <= square.center.x  {
-            //1
-            if p2.y <= square.center.y {
-                return CGPoint(x: p2.x+50, y: p2.y+50)
-            //3
-            }else {
-                return CGPoint(x: p2.x+50, y: p2.y-50)
-            }
-        }else {
-            //2
-            if p2.y <= square.center.y {
-                return CGPoint(x: p2.x-50, y: p2.y+50)
-            //4
-            }else {
-                return CGPoint(x: p2.x-50, y: p2.y-50)
-            }
-        }
-    }
-    
-    private func getAngle(p2:CGPoint) -> CGFloat {
-        if p2.x <= square.center.x  {
-            //1
-            if p2.y <= square.center.y {
-                return 45
-            //3
-            }else {
-                return -45
-            }
-        }else {
-            //2
-            if p2.y <= square.center.y {
-                return -45
-            //4
-            }else {
-                return 45
-            }
+    private func rotateAndChangeColor(angle:CGFloat,color:UIColor) {
+        UIView.animate(withDuration: 0.4) {
+            self.square.rotate(degrees:angle)
+            self.label.rotate(degrees:angle)
+            self.changeRedDotColor(color)
+            self.line.strokeColor = color.cgColor
         }
     }
     
@@ -163,41 +115,42 @@ class SwingEffectViewController: UIViewController {
     @objc func dragSquare(_ sender: UIPanGestureRecognizer) {
         if sender.state == .began {
             let location = sender.location(in: view)
-            gapX = square.center.x - location.x
-            gapY = square.center.y - location.y
-            let point:CGPoint = CGPoint(x: square.center.x - gapX, y: square.center.y - gapY)
+            gap.x = square.center.x - location.x
+            gap.y = square.center.y - location.y
             changeRedDotColor(.red)
-            redDot1.center = point
+            redDot1.center = CGPoint(x: square.center.x - gap.x, y: square.center.y - gap.y)
         }else if sender.state == .changed {
             redDot2.center = sender.location(in: view)
-            self.addLine(start: redDot1.center, toPoint:redDot2.center)
+            addLine(start: redDot1.center, toPoint:redDot2.center)
             let distance:CGFloat = getTwoPointDistance(redDot1.center,redDot2.center)
-            
-            if distance > 150 {
-                UIView.animate(withDuration: 0.5) {
-                    self.createDisplayLink()
-                    self.goal = self.getNewPoint(p2: self.redDot2.center)
-                    self.square.rotate(degrees:self.getAngle(p2: self.redDot2.center))
-                    self.square.center = CGPoint(x:self.goal.x + self.gapX, y:self.goal.y + self.gapY)
-                } completion: { _ in
-                    self.line.strokeColor = UIColor.clear.cgColor
-                }
+            goal = square.getDestinationPoint(p2: redDot2.center)
+            if distance > 100 {
+                createDisplayLink()
+                let angle:CGFloat = square.getAngle(p2:redDot2.center)
+                rotateAndChangeColor(angle: angle, color: .systemRed)
             }
         }else if sender.state == .ended {
-            UIView.animate(withDuration: 0.4) {
-                self.square.rotate(degrees:0)
-                self.changeRedDotColor(.clear)
-                self.line.strokeColor = UIColor.clear.cgColor
-            }
+            rotateAndChangeColor(angle: 0, color: .clear)
         }
     }
-}
-
-extension UIView {
-    func rotate(degrees: CGFloat) {
-        let degreesToRadians: (CGFloat) -> CGFloat = { (degrees: CGFloat) in
-            return degrees / 180.0 * CGFloat.pi
+    
+    @objc func checkRedDot1(displaylink: CADisplayLink) {
+        if round(redDot1.center.x) == round(goal.x) && round(redDot1.center.y) == round(goal.y){
+            displaylink.invalidate()
+            line.strokeColor = UIColor.clear.cgColor
+            return
         }
-        self.transform =  CGAffineTransform(rotationAngle: degreesToRadians(degrees))
+        if round(redDot1.center.x) != round(goal.x) {
+            redDot1.center.x += redDot1.center.x < goal.x ? 1: -1
+            square.center.x = redDot1.center.x + gap.x
+            label.center = square.center
+        }
+        
+        if round(redDot1.center.y) != round(goal.y) {
+            redDot1.center.y += redDot1.center.y < goal.y ? 1 : -1
+            square.center.y = redDot1.center.y + gap.y
+            label.center = square.center
+        }
+        addLine(start: redDot1.center, toPoint: redDot2.center)
     }
 }

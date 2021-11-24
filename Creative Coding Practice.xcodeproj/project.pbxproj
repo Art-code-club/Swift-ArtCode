@@ -13,6 +13,7 @@
 		041E19A3274B4135000F8C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041E19A2274B4135000F8C11 /* Assets.xcassets */; };
 		041E19A6274B4135000F8C11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041E19A4274B4135000F8C11 /* LaunchScreen.storyboard */; };
 		041E19AF274B443F000F8C11 /* SwingEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041E19AE274B443F000F8C11 /* SwingEffectViewController.swift */; };
+		043CBFB8274E7D6B00A69F37 /* UIVIew + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CBFB7274E7D6B00A69F37 /* UIVIew + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		041E19A5274B4135000F8C11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		041E19A7274B4135000F8C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		041E19AE274B443F000F8C11 /* SwingEffectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingEffectViewController.swift; sourceTree = "<group>"; };
+		043CBFB7274E7D6B00A69F37 /* UIVIew + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				041E19AE274B443F000F8C11 /* SwingEffectViewController.swift */,
+				043CBFB7274E7D6B00A69F37 /* UIVIew + Extensions.swift */,
 			);
 			path = "Swing Effect";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				041E199A274B4134000F8C11 /* AppDelegate.swift in Sources */,
+				043CBFB8274E7D6B00A69F37 /* UIVIew + Extensions.swift in Sources */,
 				041E19AF274B443F000F8C11 /* SwingEffectViewController.swift in Sources */,
 				041E199C274B4134000F8C11 /* SceneDelegate.swift in Sources */,
 			);
