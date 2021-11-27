@@ -6,3 +6,6 @@
 
 <img src="https://user-images.githubusercontent.com/47676921/143278893-41a05054-9afe-4e66-8b33-ef3b0ccb0f27.gif"  width="200" height="400">
 
+## 2. AWGE 사이트 만들어보기
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/47676921/130920914-b4c6a235-6f08-4a42-b175-1fea61b833d0.gif)
