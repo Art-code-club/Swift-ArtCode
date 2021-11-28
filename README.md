@@ -21,3 +21,9 @@ AWGE 사이트에서 영감을 받아 만든 프로젝트
 - [FomaViewableSound](https://github.com/fomagran/FomaViewableSound)
 
 <img src="https://user-images.githubusercontent.com/47676921/120883516-9d916b80-c618-11eb-9948-5766c768a870.gif"  width="200" height="400">
+
+# 4. Art Pixel Code
+
+예술작품을 텍스트와 함께 픽셀화 시킨 프로젝트
+
+<img src="https://user-images.githubusercontent.com/47676921/143734272-57949a0d-ce53-46a2-a7cd-77ea76a4ceef.gif"  width="200" height="400">
