@@ -13,6 +13,9 @@
 		046669A827579A4400C0BA70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046669A627579A4400C0BA70 /* Main.storyboard */; };
 		046669AA27579A4500C0BA70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046669A927579A4500C0BA70 /* Assets.xcassets */; };
 		046669AD27579A4500C0BA70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046669AB27579A4500C0BA70 /* LaunchScreen.storyboard */; };
+		046669B927579B4100C0BA70 /* SwingEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046669B527579B4100C0BA70 /* SwingEffectViewController.swift */; };
+		046669BA27579B4100C0BA70 /* UIVIew + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046669B627579B4100C0BA70 /* UIVIew + Extensions.swift */; };
+		046669BB27579B4100C0BA70 /* WaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046669B827579B4100C0BA70 /* WaveViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		046669A927579A4500C0BA70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		046669AC27579A4500C0BA70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		046669AE27579A4500C0BA70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046669B527579B4100C0BA70 /* SwingEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwingEffectViewController.swift; sourceTree = "<group>"; };
+		046669B627579B4100C0BA70 /* UIVIew + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew + Extensions.swift"; sourceTree = "<group>"; };
+		046669B827579B4100C0BA70 /* WaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		0466699F27579A4400C0BA70 /* Swift ArtCode */ = {
 			isa = PBXGroup;
 			children = (
+				046669B427579B4100C0BA70 /* Swing Effect */,
+				046669B727579B4100C0BA70 /* Wave */,
 				046669A027579A4400C0BA70 /* AppDelegate.swift */,
 				046669A227579A4400C0BA70 /* SceneDelegate.swift */,
 				046669A427579A4400C0BA70 /* ViewController.swift */,
@@ -65,6 +73,23 @@
 				046669AE27579A4500C0BA70 /* Info.plist */,
 			);
 			path = "Swift ArtCode";
+			sourceTree = "<group>";
+		};
+		046669B427579B4100C0BA70 /* Swing Effect */ = {
+			isa = PBXGroup;
+			children = (
+				046669B527579B4100C0BA70 /* SwingEffectViewController.swift */,
+				046669B627579B4100C0BA70 /* UIVIew + Extensions.swift */,
+			);
+			path = "Swing Effect";
+			sourceTree = "<group>";
+		};
+		046669B727579B4100C0BA70 /* Wave */ = {
+			isa = PBXGroup;
+			children = (
+				046669B827579B4100C0BA70 /* WaveViewController.swift */,
+			);
+			path = Wave;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +165,10 @@
 			files = (
 				046669A527579A4400C0BA70 /* ViewController.swift in Sources */,
 				046669A127579A4400C0BA70 /* AppDelegate.swift in Sources */,
+				046669B927579B4100C0BA70 /* SwingEffectViewController.swift in Sources */,
 				046669A327579A4400C0BA70 /* SceneDelegate.swift in Sources */,
+				046669BA27579B4100C0BA70 /* UIVIew + Extensions.swift in Sources */,
+				046669BB27579B4100C0BA70 /* WaveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
