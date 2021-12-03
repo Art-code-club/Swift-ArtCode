@@ -22,14 +22,14 @@ AWGE 사이트에서 영감을 받아 만든 프로젝트
 
 <img src="https://user-images.githubusercontent.com/47676921/120883516-9d916b80-c618-11eb-9948-5766c768a870.gif"  width="200" height="400">
 
-# 4. Art Pixel Code
+## 4. Art Pixel Code
 
 예술작품을 텍스트와 함께 픽셀화 시킨 프로젝트
 
 <img src="https://user-images.githubusercontent.com/47676921/143734272-57949a0d-ce53-46a2-a7cd-77ea76a4ceef.gif"  width="200" height="400">
 
-# 4. Colorful Wave
+## 5. Colorful Wave
 
-인터랙티브 디벨로퍼님의 "움직이는 웨이브 만들기"르르 Swift로 구현한 프로젝트
+인터랙티브 디벨로퍼님의 "움직이는 웨이브 만들기"를 Swift로 구현한 프로젝트
 
-<img src="https://user-images.githubusercontent.com/47676921/144573398-8f1a2844-6aae-4c57-9602-648d274c2499.gif"  width="400" height="200">
+<img src="https://user-images.githubusercontent.com/47676921/144575570-06d934c4-4aab-4019-98de-8a11cc489e04.gif"  width="400" height="200">
