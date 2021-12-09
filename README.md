@@ -12,7 +12,7 @@
 
 AWGE 사이트에서 영감을 받아 만든 프로젝트
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/47676921/130920914-b4c6a235-6f08-4a42-b175-1fea61b833d0.gif)
+<img src="https://user-images.githubusercontent.com/47676921/130920914-b4c6a235-6f08-4a42-b175-1fea61b833d0.gif"  width="400" height="300">
 
 ## 3. FomaViewableSound
 
