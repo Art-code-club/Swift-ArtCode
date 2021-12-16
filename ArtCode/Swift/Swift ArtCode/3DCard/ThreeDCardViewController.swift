@@ -11,10 +11,9 @@ class ThreeDCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bgView = ThreeDCardView(frame: CGRect(x: 50, y:100, width: 300, height: 270))
+        let bgView = ThreeDCardView(frame: CGRect(x: -150, y:-150, width: 300, height: 270))
         setGradient(view: bgView)
         setTransform(bgView: bgView)
-        view.addSubview(bgView)
     }
     
     func setGradient(view:UIView) {
@@ -36,7 +35,7 @@ class ThreeDCardViewController: UIViewController {
         transformLayer.position = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
         transformLayer.addSublayer(bgView.layer)
         view.layer.addSublayer(transformLayer)
-        bgView.layer.transform = CATransform3DMakeRotation(-0.3, 0, 1, 0)
+        bgView.layer.transform = CATransform3DMakeRotation(0.3, 0, 1, 0)
     }
     
     func playAnimation(view:UIView) {
