@@ -19,6 +19,8 @@
 		0485DC20275CE46C00F029B0 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC1B275CE46C00F029B0 /* Point.swift */; };
 		0485DC21275CE46C00F029B0 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC1C275CE46C00F029B0 /* Line.swift */; };
 		0485DC22275CE46C00F029B0 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC1E275CE46C00F029B0 /* WaveView.swift */; };
+		04BDAAEB276B40BE00BBF48A /* ThreeDCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BDAAEA276B40BE00BBF48A /* ThreeDCardViewController.swift */; };
+		04BDAAEE276B4EED00BBF48A /* ThreeDCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BDAAED276B4EED00BBF48A /* ThreeDCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		0485DC1B275CE46C00F029B0 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		0485DC1C275CE46C00F029B0 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		0485DC1E275CE46C00F029B0 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		04BDAAEA276B40BE00BBF48A /* ThreeDCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDCardViewController.swift; sourceTree = "<group>"; };
+		04BDAAED276B4EED00BBF48A /* ThreeDCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		0466699F27579A4400C0BA70 /* Swift ArtCode */ = {
 			isa = PBXGroup;
 			children = (
+				04BDAAE9276B406E00BBF48A /* 3DCard */,
 				0485DC17275CE46C00F029B0 /* Wave */,
 				046669B427579B4100C0BA70 /* Swing Effect */,
 				046669A027579A4400C0BA70 /* AppDelegate.swift */,
@@ -123,6 +128,15 @@
 				0485DC1E275CE46C00F029B0 /* WaveView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04BDAAE9276B406E00BBF48A /* 3DCard */ = {
+			isa = PBXGroup;
+			children = (
+				04BDAAEA276B40BE00BBF48A /* ThreeDCardViewController.swift */,
+				04BDAAED276B4EED00BBF48A /* ThreeDCardView.swift */,
+			);
+			path = 3DCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0485DC20275CE46C00F029B0 /* Point.swift in Sources */,
+				04BDAAEB276B40BE00BBF48A /* ThreeDCardViewController.swift in Sources */,
 				0485DC22275CE46C00F029B0 /* WaveView.swift in Sources */,
 				0485DC1F275CE46C00F029B0 /* WaveViewController.swift in Sources */,
 				046669A527579A4400C0BA70 /* ViewController.swift in Sources */,
@@ -204,6 +219,7 @@
 				046669B927579B4100C0BA70 /* SwingEffectViewController.swift in Sources */,
 				046669A327579A4400C0BA70 /* SceneDelegate.swift in Sources */,
 				0485DC21275CE46C00F029B0 /* Line.swift in Sources */,
+				04BDAAEE276B4EED00BBF48A /* ThreeDCardView.swift in Sources */,
 				046669BA27579B4100C0BA70 /* UIVIew + Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
