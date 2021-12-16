@@ -8,29 +8,33 @@
 import UIKit
 
 class ThreeDCardView: UIView {
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+    }
+    
+    func configure(image:UIImage) {
         let layer1 = CAShapeLayer()
         layer1.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height/5*4)
-        let img1 = UIImage(named: "Tree.png")?.cgImage
+        let img1 = image.cgImage
         layer1.contents = img1
         layer1.masksToBounds = true
         layer1.cornerRadius = 10
         let layer2 = CAShapeLayer()
         layer2.frame = CGRect(x: 0, y: frame.height/5*4+1, width: frame.width, height: frame.height/5*1)
-        let img2 = UIImage(named: "Tree.png")?.flipImageVertically()?.cgImage
+        let img2 = image.flipImageVertically()?.cgImage
         layer2.masksToBounds = true
         layer2.cornerRadius = 10
         layer2.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         layer2.contents = img2
         layer.addSublayer(layer1)
         layer.addSublayer(layer2)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
     }
 }
 

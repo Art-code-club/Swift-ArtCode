@@ -12,6 +12,7 @@ class ThreeDCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let bgView = ThreeDCardView(frame: CGRect(x: -150, y:-150, width: 300, height: 270))
+        bgView.configure(image:UIImage(named:"Night.jpeg")!)
         setGradient(view: bgView)
         setTransform(bgView: bgView)
     }
