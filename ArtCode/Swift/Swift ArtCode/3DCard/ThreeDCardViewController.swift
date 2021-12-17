@@ -25,7 +25,7 @@ class ThreeDCardViewController: UIViewController {
         for i in 0..<images.count {
             var cardView:ThreeDCardView = ThreeDCardView()
             if i == 0{
-                cardView = ThreeDCardView(frame: CGRect(x: 0, y:0, width:600, height:500))
+                cardView = ThreeDCardView(frame: CGRect(x: 0, y:0, width:self.view.frame.width/2, height:self.view.frame.height/2))
                 cardView.center = CGPoint(x: mid.x, y: mid.y)
             }else {
                 let last = cardViews.last!
@@ -52,7 +52,7 @@ class ThreeDCardViewController: UIViewController {
                     let rotation = CATransform3DMakeRotation(0.05, 0, 1, 0)
                     let scale = CATransform3DMakeScale(1.5,1.5,1)
                     cardView.layer.transform = CATransform3DConcat(rotation,scale)
-                    cardView.center.x += 15
+                    cardView.center.x += 30
                 })
             }
         }
@@ -72,7 +72,7 @@ class ThreeDCardViewController: UIViewController {
                     let rotation = CATransform3DMakeRotation(0.05, 0, 1, 0)
                     let scale = CATransform3DMakeScale(1,1,1)
                     cardView.layer.transform = CATransform3DConcat(rotation,scale)
-                    cardView.center.x -= 15
+                    cardView.center.x -= 30
                 })
             }
         }
