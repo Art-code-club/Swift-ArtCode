@@ -32,6 +32,8 @@ AWGE 사이트에서 영감을 받아 만든 프로젝트
 
 인터랙티브 디벨로퍼님의 "움직이는 웨이브 만들기"를 Swift로 구현한 프로젝트
 
+- [컬러풀한 물결 웨이브 만들기(feat. Interactive Developer)](https://fomaios.tistory.com/entry/Creative-Coding-%EC%BB%AC%EB%9F%AC%ED%92%80%ED%95%9C-%EB%AC%BC%EA%B2%B0-%EC%9B%A8%EC%9D%B4%EB%B8%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0feat-Interactive-Developer)  
+
 <img src="https://user-images.githubusercontent.com/47676921/144575570-06d934c4-4aab-4019-98de-8a11cc489e04.gif"  width="400" height="200">
 
 <img src="https://user-images.githubusercontent.com/47676921/144745735-1f795799-b529-448b-804a-0e12dee89cd5.gif"  width="400" height="200">
