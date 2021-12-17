@@ -11,9 +11,11 @@ class ThreeDCardViewController: UIViewController {
     
     var bgView:ThreeDCardView!
     var cardViews:[ThreeDCardView] = []
+    var currentCardView:(Int,ThreeDCardView)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDrag()
         makeCardViews()
     }
     
@@ -34,25 +36,65 @@ class ThreeDCardViewController: UIViewController {
             setTransform(bgView: cardView)
             cardViews.append(cardView)
         }
+        currentCardView = (0,cardViews[0])
+    }
+    
+    func moveRight() {
+        if currentCardView.0 == cardViews.count-1 {
+            return
+        }
+        for i in currentCardView.0..<cardViews.count {
+            let cardView = cardViews[i]
+            if i == currentCardView.0 {
+                rightFlipAnimation(card:cardView)
+            }else {
+                UIView.animate(withDuration: 1, delay: 0, options:.curveEaseIn, animations: {
+                    cardView.center.x = cardView.frame.width + cardView.frame.width/2
+                    let rotation = CATransform3DMakeRotation(0.05, 0, 1, 0)
+                    let scale = CATransform3DMakeScale(1.5,1.5,1)
+                    cardView.layer.transform = CATransform3DConcat(rotation,scale)
+                })
+            }
+        }
+        currentCardView = (currentCardView.0+1,cardViews[currentCardView.0+1])
+    }
+    
+    func moveLeft() {
+        if currentCardView.0 == 0 {
+            return
+        }
+        for i in currentCardView.0-1..<cardViews.count{
+            let cardView = cardViews[i]
+            if i == currentCardView.0-1 {
+               leftFlipAnimation(card: cardView)
+            }else {
+                UIView.animate(withDuration: 1, delay: 0, options:.curveEaseIn, animations: {
+                    let rotation = CATransform3DMakeRotation(0.05, 0, 1, 0)
+                    let scale = CATransform3DMakeScale(1,1,1)
+                    cardView.center.x = self.cardViews[i-1].center.x - cardView.frame.width/2
+                    cardView.layer.transform = CATransform3DConcat(rotation,scale)
+                })
+            }
+        }
+        currentCardView = (currentCardView.0-1,cardViews[currentCardView.0-1])
     }
     
     func leftFlipAnimation(card:UIView) {
         card.isHidden = false
         UIView.animate(withDuration: 1, delay: 0, options:.curveEaseIn, animations: {
-            card.frame.size.width = 600
-            card.frame.size.height = 540
-            print(card.frame.width,card.frame.height)
-            card.center = CGPoint(x: self.view.frame.midX, y: self.view.frame.midY)
-            card.layer.transform = CATransform3DMakeRotation(0.1, 0, 1, 0)
+            let rotation = CATransform3DMakeRotation(0.05, 0, 1, 0)
+            let scale = CATransform3DMakeScale(1,1,1)
+            card.layer.transform = CATransform3DConcat(rotation, scale)
+            card.center.x = self.view.frame.midX
         })
     }
     
     func rightFlipAnimation(card:UIView) {
         UIView.animate(withDuration: 1, delay: 0, options:.curveEaseOut, animations: {
-            card.frame.size.width = card.frame.size.width*2
-            card.frame.size.height = card.frame.size.height*2
-            card.layer.transform = CATransform3DMakeRotation(0.5, 0, 1, 0)
-            card.center = CGPoint(x: self.view.frame.width, y: self.view.frame.midY)
+            let rotation = CATransform3DMakeRotation(0.5, 0, 1, 0)
+            let scale = CATransform3DMakeScale(2,2,1)
+            card.layer.transform = CATransform3DConcat(rotation, scale)
+            card.center.x = self.view.frame.maxX
         }) { _ in
             card.isHidden = true
         }
@@ -70,11 +112,11 @@ class ThreeDCardViewController: UIViewController {
     }
     
     @objc private func leftSwiped(recognizer: UISwipeGestureRecognizer) {
-        leftFlipAnimation(card: bgView)
+        moveLeft()
     }
     
     @objc private func rightSwiped(recognizer: UISwipeGestureRecognizer) {
-       rightFlipAnimation(card: bgView)
+        moveRight()
     }
     
     func setTransform(bgView:UIView) {
@@ -93,5 +135,4 @@ class ThreeDCardViewController: UIViewController {
     @IBAction func tapLeftButton(_ sender: Any) {
         leftFlipAnimation(card: bgView)
     }
-    
 }
