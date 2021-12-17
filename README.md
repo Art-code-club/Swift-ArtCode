@@ -35,3 +35,11 @@ AWGE 사이트에서 영감을 받아 만든 프로젝트
 <img src="https://user-images.githubusercontent.com/47676921/144575570-06d934c4-4aab-4019-98de-8a11cc489e04.gif"  width="400" height="200">
 
 <img src="https://user-images.githubusercontent.com/47676921/144745735-1f795799-b529-448b-804a-0e12dee89cd5.gif"  width="400" height="200">
+
+## 6. 3DCardView
+
+인터랙티브 디벨로퍼님이 해외 취업을 위한 포트폴리오에서 영감을 받아 만든 3D카드 뷰
+
+ipad pro 5            |  iphone 12 pro
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/47676921/146544922-11d35109-63f8-4297-b300-12dd77cfc520.gif)  |  ![](https://user-images.githubusercontent.com/47676921/146544949-2fa5a32b-0e62-45db-afdc-72ac0b680486.gif)
