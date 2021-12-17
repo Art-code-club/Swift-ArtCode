@@ -10,19 +10,30 @@ import UIKit
 class ThreeDCardViewController: UIViewController {
     
     var bgView:ThreeDCardView!
+    var cardViews:[ThreeDCardView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let bgView1 = ThreeDCardView(frame: CGRect(x: 0, y:0, width: bgView.frame.width/3*2, height: bgView.frame.height/3*2))
-//        bgView1.center = CGPoint(x: bgView.center.x-bgView.frame.width/3, y: bgView.center.y)
-//        bgView1.configure(image:UIImage(named:"Tree.png")!)
-//        setTransform(bgView: bgView1)
-        
-        bgView = ThreeDCardView(frame: CGRect(x:0, y:0, width: 600, height: 540))
-        bgView.center = CGPoint(x: self.view.frame.midX, y: self.view.frame.midY)
-        bgView.configure(image:UIImage(named:"Night.jpeg")!)
-        setTransform(bgView: bgView)
-        setDrag()
+        makeCardViews()
+    }
+    
+    func makeCardViews() {
+        let mid = CGPoint(x: self.view.frame.midX, y: self.view.frame.midY)
+        let images:[UIImage] = [UIImage(named: "Tree.png")!,UIImage(named: "Night.jpeg")!,UIImage(named: "fomagran.png")!]
+        for i in 0..<images.count {
+            var cardView:ThreeDCardView = ThreeDCardView()
+            if i == 0{
+                cardView = ThreeDCardView(frame: CGRect(x: 0, y:0, width:600, height:500))
+                cardView.center = CGPoint(x: mid.x, y: mid.y)
+            }else {
+                let last = cardViews.last!
+                cardView = ThreeDCardView(frame: CGRect(x: 0, y:0, width:last.frame.width/3*2, height:last.frame.height/3*2))
+                cardView.center = CGPoint(x:last.center.x - cardView.frame.width/2, y: mid.y)
+            }
+            cardView.configure(image:images[i])
+            setTransform(bgView: cardView)
+            cardViews.append(cardView)
+        }
     }
     
     func leftFlipAnimation(card:UIView) {
