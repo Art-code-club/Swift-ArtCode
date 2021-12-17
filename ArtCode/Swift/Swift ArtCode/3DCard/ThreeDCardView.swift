@@ -11,7 +11,7 @@ class ThreeDCardView: UIView {
         
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        setGradient()
     }
     
     required init?(coder: NSCoder) {
@@ -36,22 +36,29 @@ class ThreeDCardView: UIView {
         layer.addSublayer(layer1)
         layer.addSublayer(layer2)
     }
+    
+    func setGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = [
+            UIColor.white.withAlphaComponent(1).cgColor,
+            UIColor.white.withAlphaComponent(0).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.75)
+        gradientLayer.endPoint = CGPoint(x:0.0,y:1.0)
+        layer.mask = gradientLayer
+    }
 }
 
 extension UIImage {
     func flipImageVertically() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         let bitmap = UIGraphicsGetCurrentContext()!
-
         bitmap.translateBy(x: size.width / 2, y: size.height / 2)
         bitmap.scaleBy(x: 1.0, y: 1.0)
-
         bitmap.translateBy(x: -size.width / 2, y: -size.height / 2)
         bitmap.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-
         return image
     }
 }
