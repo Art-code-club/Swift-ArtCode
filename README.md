@@ -50,6 +50,6 @@ ipad pro 5            |  iphone 12 pro
 
 영화 "닥터 스트레인지" 에서 영감을 받아 만든 음성인식 화면전환 프로젝트
 
-<img src="https://user-images.githubusercontent.com/47676921/146733425-bd42f9eb-a6e9-4115-9bbe-992af4200ffd.gif"  width="300" height="400">
+<img src="https://user-images.githubusercontent.com/47676921/146734619-32aef605-6935-470b-b428-ad776bd7e1a7.gif"  width="300" height="400">
 
 
