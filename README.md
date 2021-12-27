@@ -42,9 +42,9 @@ AWGE 사이트에서 영감을 받아 만든 프로젝트
 
 인터랙티브 디벨로퍼님이 해외 취업을 위한 포트폴리오에서 영감을 받아 만든 3D카드 뷰
 
-ipad pro 5            |  iphone 12 pro
+ipad pro 5th            |  iphone 13 pro
 :-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/47676921/146544922-11d35109-63f8-4297-b300-12dd77cfc520.gif)  |  ![](https://user-images.githubusercontent.com/47676921/146544949-2fa5a32b-0e62-45db-afdc-72ac0b680486.gif)   
+![](https://user-images.githubusercontent.com/47676921/147451696-6b363d59-5775-44a8-b602-ef000c9ac5c2.gif)  |  ![](https://user-images.githubusercontent.com/47676921/147451723-83a6749c-e27f-47c8-8c6b-f6893abe68ab.gif)
 
 ## 7. Doctor Strange
 
