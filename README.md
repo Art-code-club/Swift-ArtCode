@@ -56,5 +56,7 @@ ipad pro 5            |  iphone 12 pro
 
 유튜브 [보는 사람이 다 쫄깃한 움직이는 조각상](https://www.youtube.com/watch?v=gr3FbgfUhns) 을 보고 영감을 받아 만든 로딩 프로젝트
 
-<img src="https://user-images.githubusercontent.com/47676921/147438682-f47c9412-acf6-49a2-8bb1-6d594faee188.gif"  width="300" height="400">
+ipad pro 5            |  iphone 13 pro
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/47676921/147450991-8e8f17d7-334e-4bf5-8858-7de960102c72.gif)  |  ![](https://user-images.githubusercontent.com/47676921/147450931-1cd903ca-8a5b-4b18-946e-f3023542b79e.gif)
 
