@@ -52,4 +52,9 @@ ipad pro 5            |  iphone 12 pro
 
 <img src="https://user-images.githubusercontent.com/47676921/146736284-4fe0917e-4dc3-4593-9afd-5a2ad9f40f5b.gif"  width="300" height="400">
 
+## 8. David Loading
+
+유튜브 [보는 사람이 다 쫄깃한 움직이는 조각상](https://www.youtube.com/watch?v=gr3FbgfUhns) 을 보고 영감을 받아 만든 로딩 프로젝트
+
+<img src="https://user-images.githubusercontent.com/47676921/147438682-f47c9412-acf6-49a2-8bb1-6d594faee188.gif"  width="300" height="400">
 
