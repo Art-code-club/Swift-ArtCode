@@ -40,7 +40,9 @@ AWGE 사이트에서 영감을 받아 만든 프로젝트
 
 ## 6. 3DCardView
 
-인터랙티브 디벨로퍼님이 해외 취업을 위한 포트폴리오에서 영감을 받아 만든 3D카드 뷰
+3D로 카드를 표현한 라이브러리
+
+- [3DCardView](https://github.com/fomagran/ThreeDCardView)
 
 ipad pro 5th            |  iphone 13 pro
 :-------------------------:|:-------------------------:
