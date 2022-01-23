@@ -40,7 +40,9 @@ AWGE 사이트에서 영감을 받아 만든 프로젝트
 
 ## 6. 3DCardView
 
-인터랙티브 디벨로퍼님이 해외 취업을 위한 포트폴리오에서 영감을 받아 만든 3D카드 뷰
+3D로 카드를 표현한 라이브러리
+
+- [3DCardView](https://github.com/fomagran/ThreeDCardView)
 
 ipad pro 5th            |  iphone 13 pro
 :-------------------------:|:-------------------------:
@@ -58,5 +60,13 @@ ipad pro 5th            |  iphone 13 pro
 
 ipad pro 5            |  iphone 13 pro
 :-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/47676921/147450991-8e8f17d7-334e-4bf5-8858-7de960102c72.gif)  |  ![](https://user-images.githubusercontent.com/47676921/147450931-1cd903ca-8a5b-4b18-946e-f3023542b79e.gif)
+![](https://user-images.githubusercontent.com/47676921/147450991-8e8f17d7-334e-4bf5-8858-7de960102c72.gif)  |  ![](https://user-images.githubusercontent.com/47676921/147450931-1cd903ca-8a5b-4b18-946e-f3023542b79e.gif)   
+
+## 9. LP
+
+LP 턴테이블에서 영감받아 만든 프로젝트
+
+ipad pro 5th            |  iphone 13 pro
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/47676921/150670345-9afb93ee-49ae-45d7-bb71-b6ab9fafbd3d.gif)  |  ![](https://user-images.githubusercontent.com/47676921/150670530-131ad61d-6bcd-46bd-a392-2c71890913f0.gif)
 
