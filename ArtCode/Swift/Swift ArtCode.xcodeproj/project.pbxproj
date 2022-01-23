@@ -19,6 +19,18 @@
 		0485DC20275CE46C00F029B0 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC1B275CE46C00F029B0 /* Point.swift */; };
 		0485DC21275CE46C00F029B0 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC1C275CE46C00F029B0 /* Line.swift */; };
 		0485DC22275CE46C00F029B0 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC1E275CE46C00F029B0 /* WaveView.swift */; };
+		0497A7FC279D49850060616A /* LPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497A7EC279D49850060616A /* LPConstants.swift */; };
+		0497A7FD279D49850060616A /* LPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497A7EE279D49850060616A /* LPViewController.swift */; };
+		0497A7FE279D49850060616A /* QuadBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497A7F0279D49850060616A /* QuadBezier.swift */; };
+		0497A7FF279D49850060616A /* LP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497A7F1279D49850060616A /* LP.swift */; };
+		0497A800279D49850060616A /* LPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497A7F3279D49850060616A /* LPView.swift */; };
+		0497A801279D49850060616A /* Monster.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0497A7F5279D49850060616A /* Monster.mp3 */; };
+		0497A802279D49850060616A /* Shotta flow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0497A7F6279D49850060616A /* Shotta flow.mp3 */; };
+		0497A803279D49850060616A /* Headlights.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0497A7F7279D49850060616A /* Headlights.mp3 */; };
+		0497A804279D49850060616A /* Hot shower.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0497A7F8279D49850060616A /* Hot shower.mp3 */; };
+		0497A805279D49850060616A /* Clubhouse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0497A7F9279D49850060616A /* Clubhouse.mp3 */; };
+		0497A806279D49850060616A /* BOP.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0497A7FA279D49850060616A /* BOP.mp3 */; };
+		0497A807279D49850060616A /* Highest in the room.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0497A7FB279D49850060616A /* Highest in the room.mp3 */; };
 		04BDAAEB276B40BE00BBF48A /* ThreeDCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BDAAEA276B40BE00BBF48A /* ThreeDCardViewController.swift */; };
 		04BDAAEE276B4EED00BBF48A /* ThreeDCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BDAAED276B4EED00BBF48A /* ThreeDCardView.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +50,18 @@
 		0485DC1B275CE46C00F029B0 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		0485DC1C275CE46C00F029B0 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		0485DC1E275CE46C00F029B0 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		0497A7EC279D49850060616A /* LPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPConstants.swift; sourceTree = "<group>"; };
+		0497A7EE279D49850060616A /* LPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPViewController.swift; sourceTree = "<group>"; };
+		0497A7F0279D49850060616A /* QuadBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadBezier.swift; sourceTree = "<group>"; };
+		0497A7F1279D49850060616A /* LP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LP.swift; sourceTree = "<group>"; };
+		0497A7F3279D49850060616A /* LPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPView.swift; sourceTree = "<group>"; };
+		0497A7F5279D49850060616A /* Monster.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Monster.mp3; sourceTree = "<group>"; };
+		0497A7F6279D49850060616A /* Shotta flow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Shotta flow.mp3"; sourceTree = "<group>"; };
+		0497A7F7279D49850060616A /* Headlights.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Headlights.mp3; sourceTree = "<group>"; };
+		0497A7F8279D49850060616A /* Hot shower.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hot shower.mp3"; sourceTree = "<group>"; };
+		0497A7F9279D49850060616A /* Clubhouse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Clubhouse.mp3; sourceTree = "<group>"; };
+		0497A7FA279D49850060616A /* BOP.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BOP.mp3; sourceTree = "<group>"; };
+		0497A7FB279D49850060616A /* Highest in the room.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Highest in the room.mp3"; sourceTree = "<group>"; };
 		04BDAAEA276B40BE00BBF48A /* ThreeDCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDCardViewController.swift; sourceTree = "<group>"; };
 		04BDAAED276B4EED00BBF48A /* ThreeDCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +96,7 @@
 		0466699F27579A4400C0BA70 /* Swift ArtCode */ = {
 			isa = PBXGroup;
 			children = (
+				0497A7EA279D49850060616A /* LP */,
 				04BDAAE9276B406E00BBF48A /* 3DCard */,
 				0485DC17275CE46C00F029B0 /* Wave */,
 				046669B427579B4100C0BA70 /* Swing Effect */,
@@ -128,6 +153,65 @@
 				0485DC1E275CE46C00F029B0 /* WaveView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0497A7EA279D49850060616A /* LP */ = {
+			isa = PBXGroup;
+			children = (
+				0497A7EB279D49850060616A /* Utils */,
+				0497A7ED279D49850060616A /* Controller */,
+				0497A7EF279D49850060616A /* Model */,
+				0497A7F2279D49850060616A /* View */,
+				0497A7F4279D49850060616A /* musics */,
+			);
+			path = LP;
+			sourceTree = "<group>";
+		};
+		0497A7EB279D49850060616A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0497A7EC279D49850060616A /* LPConstants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0497A7ED279D49850060616A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0497A7EE279D49850060616A /* LPViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0497A7EF279D49850060616A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0497A7F0279D49850060616A /* QuadBezier.swift */,
+				0497A7F1279D49850060616A /* LP.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0497A7F2279D49850060616A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0497A7F3279D49850060616A /* LPView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0497A7F4279D49850060616A /* musics */ = {
+			isa = PBXGroup;
+			children = (
+				0497A7F5279D49850060616A /* Monster.mp3 */,
+				0497A7F6279D49850060616A /* Shotta flow.mp3 */,
+				0497A7F7279D49850060616A /* Headlights.mp3 */,
+				0497A7F8279D49850060616A /* Hot shower.mp3 */,
+				0497A7F9279D49850060616A /* Clubhouse.mp3 */,
+				0497A7FA279D49850060616A /* BOP.mp3 */,
+				0497A7FB279D49850060616A /* Highest in the room.mp3 */,
+			);
+			path = musics;
 			sourceTree = "<group>";
 		};
 		04BDAAE9276B406E00BBF48A /* 3DCard */ = {
@@ -197,9 +281,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0497A806279D49850060616A /* BOP.mp3 in Resources */,
 				046669AD27579A4500C0BA70 /* LaunchScreen.storyboard in Resources */,
+				0497A802279D49850060616A /* Shotta flow.mp3 in Resources */,
+				0497A801279D49850060616A /* Monster.mp3 in Resources */,
 				046669AA27579A4500C0BA70 /* Assets.xcassets in Resources */,
+				0497A804279D49850060616A /* Hot shower.mp3 in Resources */,
+				0497A807279D49850060616A /* Highest in the room.mp3 in Resources */,
+				0497A805279D49850060616A /* Clubhouse.mp3 in Resources */,
 				046669A827579A4400C0BA70 /* Main.storyboard in Resources */,
+				0497A803279D49850060616A /* Headlights.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,11 +306,16 @@
 				0485DC22275CE46C00F029B0 /* WaveView.swift in Sources */,
 				0485DC1F275CE46C00F029B0 /* WaveViewController.swift in Sources */,
 				046669A527579A4400C0BA70 /* ViewController.swift in Sources */,
+				0497A7FE279D49850060616A /* QuadBezier.swift in Sources */,
+				0497A7FC279D49850060616A /* LPConstants.swift in Sources */,
 				046669A127579A4400C0BA70 /* AppDelegate.swift in Sources */,
+				0497A7FF279D49850060616A /* LP.swift in Sources */,
 				046669B927579B4100C0BA70 /* SwingEffectViewController.swift in Sources */,
+				0497A7FD279D49850060616A /* LPViewController.swift in Sources */,
 				046669A327579A4400C0BA70 /* SceneDelegate.swift in Sources */,
 				0485DC21275CE46C00F029B0 /* Line.swift in Sources */,
 				04BDAAEE276B4EED00BBF48A /* ThreeDCardView.swift in Sources */,
+				0497A800279D49850060616A /* LPView.swift in Sources */,
 				046669BA27579B4100C0BA70 /* UIVIew + Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
