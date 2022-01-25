@@ -15,6 +15,9 @@
 		046669AD27579A4500C0BA70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046669AB27579A4500C0BA70 /* LaunchScreen.storyboard */; };
 		046669B927579B4100C0BA70 /* SwingEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046669B527579B4100C0BA70 /* SwingEffectViewController.swift */; };
 		046669BA27579B4100C0BA70 /* UIVIew + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046669B627579B4100C0BA70 /* UIVIew + Extensions.swift */; };
+		047B8204279FADC900CCC439 /* MacMillerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B8201279FADC900CCC439 /* MacMillerViewController.swift */; };
+		047B8205279FADC900CCC439 /* GilitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B8202279FADC900CCC439 /* GilitchView.swift */; };
+		047B8206279FADC900CCC439 /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B8203279FADC900CCC439 /* Particle.swift */; };
 		0485DC1F275CE46C00F029B0 /* WaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC19275CE46C00F029B0 /* WaveViewController.swift */; };
 		0485DC20275CE46C00F029B0 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC1B275CE46C00F029B0 /* Point.swift */; };
 		0485DC21275CE46C00F029B0 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC1C275CE46C00F029B0 /* Line.swift */; };
@@ -54,6 +57,9 @@
 		046669AE27579A4500C0BA70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		046669B527579B4100C0BA70 /* SwingEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwingEffectViewController.swift; sourceTree = "<group>"; };
 		046669B627579B4100C0BA70 /* UIVIew + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew + Extensions.swift"; sourceTree = "<group>"; };
+		047B8201279FADC900CCC439 /* MacMillerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacMillerViewController.swift; sourceTree = "<group>"; };
+		047B8202279FADC900CCC439 /* GilitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GilitchView.swift; sourceTree = "<group>"; };
+		047B8203279FADC900CCC439 /* Particle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		0485DC19275CE46C00F029B0 /* WaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveViewController.swift; sourceTree = "<group>"; };
 		0485DC1B275CE46C00F029B0 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		0485DC1C275CE46C00F029B0 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 		0466699F27579A4400C0BA70 /* Swift ArtCode */ = {
 			isa = PBXGroup;
 			children = (
+				047B8200279FADC900CCC439 /* MacMiller */,
 				0497A7EA279D49850060616A /* LP */,
 				0497A808279D4AF40060616A /* DavidLoading */,
 				0497A80A279D4AF40060616A /* DoctorStrange */,
@@ -136,6 +143,16 @@
 				046669B627579B4100C0BA70 /* UIVIew + Extensions.swift */,
 			);
 			path = "Swing Effect";
+			sourceTree = "<group>";
+		};
+		047B8200279FADC900CCC439 /* MacMiller */ = {
+			isa = PBXGroup;
+			children = (
+				047B8201279FADC900CCC439 /* MacMillerViewController.swift */,
+				047B8202279FADC900CCC439 /* GilitchView.swift */,
+				047B8203279FADC900CCC439 /* Particle.swift */,
+			);
+			path = MacMiller;
 			sourceTree = "<group>";
 		};
 		0485DC17275CE46C00F029B0 /* Wave */ = {
@@ -369,16 +386,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0485DC20275CE46C00F029B0 /* Point.swift in Sources */,
+				047B8204279FADC900CCC439 /* MacMillerViewController.swift in Sources */,
 				0497A817279D4AF40060616A /* TestViewController.swift in Sources */,
 				04BDAAEB276B40BE00BBF48A /* ThreeDCardViewController.swift in Sources */,
 				0485DC22275CE46C00F029B0 /* WaveView.swift in Sources */,
 				0485DC1F275CE46C00F029B0 /* WaveViewController.swift in Sources */,
 				0497A816279D4AF40060616A /* SKView + Extensions.swift in Sources */,
+				047B8205279FADC900CCC439 /* GilitchView.swift in Sources */,
 				046669A527579A4400C0BA70 /* ViewController.swift in Sources */,
 				0497A7FE279D49850060616A /* QuadBezier.swift in Sources */,
 				0497A7FC279D49850060616A /* LPConstants.swift in Sources */,
 				046669A127579A4400C0BA70 /* AppDelegate.swift in Sources */,
 				0497A7FF279D49850060616A /* LP.swift in Sources */,
+				047B8206279FADC900CCC439 /* Particle.swift in Sources */,
 				046669B927579B4100C0BA70 /* SwingEffectViewController.swift in Sources */,
 				0497A81C279D4AF40060616A /* CircleView.swift in Sources */,
 				0497A815279D4AF40060616A /* DavidLoadingViewController.swift in Sources */,
