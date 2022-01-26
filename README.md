@@ -44,9 +44,9 @@ AWGE 사이트에서 영감을 받아 만든 프로젝트
 
 - [3DCardView](https://github.com/fomagran/ThreeDCardView)
 
-ipad pro 5th            |  iphone 13 pro
+iphone 13 pro            |  ipad pro 5th
 :-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/47676921/147451696-6b363d59-5775-44a8-b602-ef000c9ac5c2.gif)  |  ![](https://user-images.githubusercontent.com/47676921/147451723-83a6749c-e27f-47c8-8c6b-f6893abe68ab.gif)
+![](https://user-images.githubusercontent.com/47676921/147451723-83a6749c-e27f-47c8-8c6b-f6893abe68ab.gif)  |  ![](https://user-images.githubusercontent.com/47676921/147451696-6b363d59-5775-44a8-b602-ef000c9ac5c2.gif)
 
 ## 7. Doctor Strange
 
@@ -58,9 +58,10 @@ ipad pro 5th            |  iphone 13 pro
 
 유튜브 [보는 사람이 다 쫄깃한 움직이는 조각상](https://www.youtube.com/watch?v=gr3FbgfUhns) 을 보고 영감을 받아 만든 로딩 프로젝트
 
-ipad pro 5            |  iphone 13 pro
+iphone 13 pro         |  ipad pro 5   
 :-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/47676921/147450991-8e8f17d7-334e-4bf5-8858-7de960102c72.gif)  |  ![](https://user-images.githubusercontent.com/47676921/147450931-1cd903ca-8a5b-4b18-946e-f3023542b79e.gif)   
+![](https://user-images.githubusercontent.com/47676921/147450931-1cd903ca-8a5b-4b18-946e-f3023542b79e.gif)  |  ![](https://user-images.githubusercontent.com/47676921/147450991-8e8f17d7-334e-4bf5-8858-7de960102c72.gif)   
+
 
 ## 9. LP
 
