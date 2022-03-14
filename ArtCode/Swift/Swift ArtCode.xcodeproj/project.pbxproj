@@ -22,6 +22,10 @@
 		0485DC20275CE46C00F029B0 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC1B275CE46C00F029B0 /* Point.swift */; };
 		0485DC21275CE46C00F029B0 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC1C275CE46C00F029B0 /* Line.swift */; };
 		0485DC22275CE46C00F029B0 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485DC1E275CE46C00F029B0 /* WaveView.swift */; };
+		048B345127DEE65E001E6643 /* break.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 048B344D27DEE65E001E6643 /* break.mp3 */; };
+		048B345227DEE65E001E6643 /* BrokenGlassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B344E27DEE65E001E6643 /* BrokenGlassViewController.swift */; };
+		048B345327DEE65E001E6643 /* crack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 048B344F27DEE65E001E6643 /* crack.wav */; };
+		048B345427DEE65E001E6643 /* GlassPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B345027DEE65E001E6643 /* GlassPiece.swift */; };
 		0497A7FC279D49850060616A /* LPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497A7EC279D49850060616A /* LPConstants.swift */; };
 		0497A7FD279D49850060616A /* LPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497A7EE279D49850060616A /* LPViewController.swift */; };
 		0497A7FE279D49850060616A /* QuadBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497A7F0279D49850060616A /* QuadBezier.swift */; };
@@ -64,6 +68,10 @@
 		0485DC1B275CE46C00F029B0 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		0485DC1C275CE46C00F029B0 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		0485DC1E275CE46C00F029B0 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		048B344D27DEE65E001E6643 /* break.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = break.mp3; sourceTree = "<group>"; };
+		048B344E27DEE65E001E6643 /* BrokenGlassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrokenGlassViewController.swift; sourceTree = "<group>"; };
+		048B344F27DEE65E001E6643 /* crack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crack.wav; sourceTree = "<group>"; };
+		048B345027DEE65E001E6643 /* GlassPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlassPiece.swift; sourceTree = "<group>"; };
 		0497A7EC279D49850060616A /* LPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPConstants.swift; sourceTree = "<group>"; };
 		0497A7EE279D49850060616A /* LPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPViewController.swift; sourceTree = "<group>"; };
 		0497A7F0279D49850060616A /* QuadBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadBezier.swift; sourceTree = "<group>"; };
@@ -118,6 +126,7 @@
 		0466699F27579A4400C0BA70 /* Swift ArtCode */ = {
 			isa = PBXGroup;
 			children = (
+				048B344C27DEE65E001E6643 /* BrokenGlass */,
 				047B8200279FADC900CCC439 /* MacMiller */,
 				0497A7EA279D49850060616A /* LP */,
 				0497A808279D4AF40060616A /* DavidLoading */,
@@ -188,6 +197,17 @@
 				0485DC1E275CE46C00F029B0 /* WaveView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		048B344C27DEE65E001E6643 /* BrokenGlass */ = {
+			isa = PBXGroup;
+			children = (
+				048B344D27DEE65E001E6643 /* break.mp3 */,
+				048B344E27DEE65E001E6643 /* BrokenGlassViewController.swift */,
+				048B344F27DEE65E001E6643 /* crack.wav */,
+				048B345027DEE65E001E6643 /* GlassPiece.swift */,
+			);
+			path = BrokenGlass;
 			sourceTree = "<group>";
 		};
 		0497A7EA279D49850060616A /* LP */ = {
@@ -374,6 +394,8 @@
 				0497A807279D49850060616A /* Highest in the room.mp3 in Resources */,
 				0497A805279D49850060616A /* Clubhouse.mp3 in Resources */,
 				046669A827579A4400C0BA70 /* Main.storyboard in Resources */,
+				048B345327DEE65E001E6643 /* crack.wav in Resources */,
+				048B345127DEE65E001E6643 /* break.mp3 in Resources */,
 				0497A803279D49850060616A /* Headlights.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,11 +426,13 @@
 				0497A815279D4AF40060616A /* DavidLoadingViewController.swift in Sources */,
 				0497A7FD279D49850060616A /* LPViewController.swift in Sources */,
 				046669A327579A4400C0BA70 /* SceneDelegate.swift in Sources */,
+				048B345227DEE65E001E6643 /* BrokenGlassViewController.swift in Sources */,
 				0485DC21275CE46C00F029B0 /* Line.swift in Sources */,
 				04BDAAEE276B4EED00BBF48A /* ThreeDCardView.swift in Sources */,
 				0497A800279D49850060616A /* LPView.swift in Sources */,
 				046669BA27579B4100C0BA70 /* UIVIew + Extensions.swift in Sources */,
 				0497A818279D4AF40060616A /* DSViewController.swift in Sources */,
+				048B345427DEE65E001E6643 /* GlassPiece.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
