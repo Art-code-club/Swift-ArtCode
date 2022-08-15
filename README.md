@@ -106,4 +106,5 @@ iphone 13 pro           |  ipad pro 5th
 
  iphone 13 pro           
 :-------------------------:
-![](https://user-images.githubusercontent.com/47676921/184563522-248e5911-b332-43fb-a00a-9625eca6454d.gif)
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/47676921/184563865-fece5e00-b035-41ee-9957-db1d34e5b391.gif)
+
